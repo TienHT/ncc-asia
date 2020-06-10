@@ -1,0 +1,26 @@
+bài tập js lớp frontend:
+
+có 1 mảng sau:
+students = [
+{id: 1, name: 'tran van a', className: '.net'},
+{id: 2, name: 'tran van b', className: '.net'},
+{id: 3, name: 'tran van c', className: 'angular'},
+{id: 4, name: 'tran van d', className: 'angular'},
+{id: 5, name: 'tran van e', className: 'java'},
+{id: 6, name: 'tran van f', className: 'java'},
+{id: 7, name: 'tran van g', className: 'java'},
+{id: 8, name: 'tran van h', className: 'test'},
+{id: 9, name: 'tran van i', className: 'test'},
+{id: 10, name: 'tran van j', className: 'test'}
+]
+
+=> hiển thị ra 2 select box:
+select 1 chọn className ( chọn .net, angular, java hoặc test)
+select 2 chọn student
+sau khi chọn className thì ở select 2 sẽ chọn student tương ứng.
+ví dụ select 1 chọn .net thì select 2 chọn tran van a hoặc trang van b
+
+chỉ được dùng js thuần, viết trong file html luôn, tên file html là tên người làm
+ví dụ: pham-trung-hieu-bai-tap-js.html
+
+nộp bài lên github

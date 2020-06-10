@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="">Class Name:</label>
+    <select name="" id="idClassName">
+      
+    </select>
+    <select name="" id="idName">
+        <option value="none">Please Select Name</option>
+    </select>
+    <p id='idStudent'></p>
+    <script>
+        students = [
+        {id: 1, name: 'tran van a', className: '.net'},
+        {id: 2, name: 'tran van b', className: '.net'},
+        {id: 3, name: 'tran van c', className: 'angular'},
+        {id: 4, name: 'tran van d', className: 'angular'},
+        {id: 5, name: 'tran van e', className: 'java'},
+        {id: 6, name: 'tran van f', className: 'java'},
+        {id: 7, name: 'tran van g', className: 'java'},
+        {id: 8, name: 'tran van h', className: 'test'},
+        {id: 9, name: 'tran van i', className: 'test'},
+        {id: 10, name: 'tran van j', className: 'test'}
+        ]
+        let idClassName = document.getElementById('idClassName')
+        let idName = document.getElementById('idName')
+        var className = students.map(item => item.className);
+        // className = className.filter((item,index)=>{
+        //     return className.indexOf(item) === index;
+        // })
+        //cach 2
+        className = new Set(className);
+        let classNameSelected = idClassName.addEventListener('change',showNameStudent)
+        let nameSelected = idName.addEventListener('change',showStudent)
+        function LoadClassName(){
+            let print = "";
+            className.forEach(element => {
+                print += '<option>' + element + '</option>'
+            });
+            idClassName.innerHTML ='<option value="none">Please Select Class Name</option>' +  print
+        }
+        function showNameStudent(){
+          let valueClassName = idClassName.value
+          let content = students.map(function (student){
+              if(student.className === valueClassName){
+                  return '<option>' + student.name + '</option>'
+              }
+          })
+          
+          idName.innerHTML ='<option>Select Name</option>' +  content.join('')
+        }
+        function showStudent(){
+          let valueClassName = idClassName.value
+          let valueName = idName.value
+          let content = students.map(function (student){
+              if(student.className === valueClassName & student.name === valueName){
+                  return  'Id :' + student.id + ' <br>Name :' + student.name +'<br>Class Name :'+student.className
+              }
+          })
+          console.log(content)
+          idStudent.innerHTML = content.join('')
+        }
+       
+        LoadClassName();
+    </script>
+</body>
+</html>
